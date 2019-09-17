@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - temperatura",
+            "request": "launch",
+            "mainClass": "temperatura"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - volume",
+            "request": "launch",
+            "mainClass": "volume"
+        }
+    ]
+}
