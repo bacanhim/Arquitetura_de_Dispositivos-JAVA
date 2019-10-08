@@ -7,6 +7,8 @@ public class Ficha3 {
         System.out.println(CharacterUtilities.lowerLetterPredecessorOf('b'));
         System.out.println(CharacterUtilities.lowerLetterSuccessorStepsOf('g',1));
         System.out.println(CharacterUtilities.lowerLetterPredecessorStepsOf('v',1));
-        System.out.println(CharacterUtilities.occurrencesOfCharacterIn('abac','a'));
+        System.out.println(CharacterUtilities.occurrencesOfCharacterIn('abac', 'a'));
+        System.out.println(CharacterUtilities.replaceCharacterIn()
+
     }
 }

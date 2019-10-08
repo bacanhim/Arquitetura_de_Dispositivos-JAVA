@@ -51,4 +51,12 @@ public class CharacterUtilities {
         }
         return num;
     }
+
+    public static char replaceCharacterIn(char letra,char []array,char letra2) {
+        for (int i = 0; i < array.length; i++) {
+            if (letra == array[i]) {
+                array[i]=letra2;
+            }
+
+    }
 }
