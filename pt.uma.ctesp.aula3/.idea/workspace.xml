@@ -47,7 +47,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.problema">
     <configuration name="Ficha3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Ficha3" />
       <module name="pt.uma.ctesp.aula3" />
@@ -55,8 +55,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="problema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="problema" />
+      <module name="pt.uma.ctesp.aula3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.problema" />
         <item itemvalue="Application.Ficha3" />
       </list>
     </recent_temporary>
@@ -77,7 +85,7 @@
       <workItem from="1570376806729" duration="1037000" />
       <workItem from="1570533515085" duration="598000" />
       <workItem from="1570552359508" duration="77000" />
-      <workItem from="1570552497915" duration="9333000" />
+      <workItem from="1570552497915" duration="12463000" />
     </task>
     <servers />
   </component>

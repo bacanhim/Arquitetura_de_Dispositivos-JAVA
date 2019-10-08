@@ -8,7 +8,7 @@ public class Ficha3 {
 //      System.out.println(CharacterUtilities.occurrencesOfCharacterIn(new char[]{'a', 'a'}, 'a'));
 //      System.out.println(CharacterUtilities.toString(CharacterUtilities.replaceCharacterIn('a', new char[]{'a', 'a'}, 'd')));
         char[] array = {'a', 'a', 'a', 'a'};
-//        System.out.println(CharacterUtilities.copyOfPartOf(1, 3, array));
+        System.out.println(CharacterUtilities.copyOfPartOf(1, 3, array));
 //      System.out.println(CharacterUtilities.concatenationOf(new char[]{'a','a'},new char[]{'a','a'}));
         System.out.println(CaesarCipherDecipherer.cipher(array,3));
     }
