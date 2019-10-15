@@ -23,7 +23,5 @@ public class problema {
             System.out.println("Media: "+media[i] / courseAcronyms.length);
         }
         System.out.println("A media mais alta é: " + highMedia + " e pertence ao aluno: " + aluno);
-
     }
 }
-
