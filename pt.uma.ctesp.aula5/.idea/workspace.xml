@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30439c7c-6f7a-42fc-888f-ed984255bac6" name="Default Changelist" comment="" />
+    <list default="true" id="2fd3ac33-3fb6-45fd-9e45-8d6cd5151e32" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,21 +18,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1SFWYTgrREYtGrgL1pnYNnLX95O" />
+  <component name="ProjectId" id="1SZRuTCBYXdQksCQ2Abe0lIVehA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Turma A\Desktop\ArqDisp" />
-    </key>
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -47,34 +39,25 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main" />
-      <module name="pt.uma.ctesp.aula4" />
+      <module name="pt.uma.ctesp.aula5" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="30439c7c-6f7a-42fc-888f-ed984255bac6" name="Default Changelist" comment="" />
-      <created>1571159871887</created>
+      <changelist id="2fd3ac33-3fb6-45fd-9e45-8d6cd5151e32" name="Default Changelist" comment="" />
+      <created>1571769353789</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1571159871887</updated>
-      <workItem from="1571159873297" duration="4771000" />
-      <workItem from="1571166372741" duration="67000" />
-      <workItem from="1571166443374" duration="4377000" />
-      <workItem from="1571761067811" duration="1145000" />
-      <workItem from="1571762232784" duration="3547000" />
+      <updated>1571769353789</updated>
+      <workItem from="1571769358375" duration="6297000" />
     </task>
     <servers />
   </component>
@@ -86,9 +69,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>

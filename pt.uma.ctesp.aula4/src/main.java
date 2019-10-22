@@ -9,6 +9,7 @@ public class main {
                 {1, 1},
                 {1, 1}
         };
-        MatrixUtilities.sumOf(matrix1, matrix);
+//        MatrixUtilities.sumOf(matrix1, matrix);
+        CharacterDrawingUtilities.drawEmptyRectangleWith('a',10,10);
     }
 }
