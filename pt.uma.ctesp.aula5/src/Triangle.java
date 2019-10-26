@@ -45,14 +45,17 @@ public class Triangle {
         this.c = c;
     }
 
-    public double calculateBase() {
+    public double calculateWidth() {
+
         return b.distanceTo(c);
     }
 
-    public double calcularAltura() {
+    public double calculateHeight() {
+
         return b.distanceTo(a);
     }
-    public double calcularArea(){
-        return ((calculateBase()*calcularAltura())/2);
+
+    public double calcularArea() {
+        return ((calculateWidth() * calculateHeight()) / 2);
     }
 }

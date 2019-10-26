@@ -5,6 +5,8 @@ public class main {
         Point c = new Point(3, 1);
 //        System.out.println(a.distanceTo(b));
         Triangle z = new Triangle(a, b, c);
-        System.out.println(z.calcularArea());
+        Rectangle s = new Rectangle(a, 5, 3);
+        System.out.println(s.calculateAreaRectangle());
+
     }
 }
