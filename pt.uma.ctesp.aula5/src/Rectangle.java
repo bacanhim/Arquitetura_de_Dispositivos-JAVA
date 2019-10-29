@@ -7,6 +7,7 @@ public class Rectangle {
         height = 0;
         width = 0;
     }
+
     public Rectangle(Point topLeftPoint, double width, double height) {
         this.topLeftPoint = topLeftPoint;
         this.height = height;
@@ -44,10 +45,24 @@ public class Rectangle {
     }
 
     public double calculateAreaRectangle() {
-        return width*height;
+        return width * height;
     }
 
     public double calculatePerimeterRectangle() {
-        return (width*2)+(height*2);
+        return (width * 2) + (height * 2);
     }
+
+    public boolean pointInsideRectangle(Point point) {
+        boolean boleano = false;
+        Point topRightPoint = new Point(topLeftPoint.getX() + width, topLeftPoint.getY());
+        Point bottomRightPoint = new Point(topRightPoint.getX() + width, topRightPoint.getY() - height);
+        Point bottomLeftPoint = new Point(topRightPoint.getX(), topRightPoint.getY() - height);
+        if (point.getX() > topLeftPoint.getX() && point.getX() < topRightPoint.getX() && point.getY() > bottomRightPoint.getY() && point.getY() < topRightPoint.getY()) {
+            boleano = true;
+        }
+        return boleano;
+    }
+
+
+
 }
