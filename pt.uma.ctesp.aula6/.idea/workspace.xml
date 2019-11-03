@@ -26,7 +26,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -65,7 +65,7 @@
       <updated>1572377999375</updated>
       <workItem from="1572378001940" duration="703000" />
       <workItem from="1572378758843" duration="5310000" />
-      <workItem from="1572798245087" duration="247000" />
+      <workItem from="1572798245087" duration="363000" />
     </task>
     <task id="LOCAL-00001" summary="Fim da ficha.">
       <created>1572798329310</created>
@@ -88,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572798458179</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fim da ficha.">
+      <created>1572798505851</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572798505851</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
