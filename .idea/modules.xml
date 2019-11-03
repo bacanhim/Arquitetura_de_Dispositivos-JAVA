@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ArqDisp.iml" filepath="$PROJECT_DIR$/ArqDisp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ficha2/Ficha2.iml" filepath="$PROJECT_DIR$/Ficha2/Ficha2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ficha3/Ficha3.iml" filepath="$PROJECT_DIR$/Ficha3/Ficha3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pt.uma.ctesp.aula3/pt.uma.ctesp.aula3.iml" filepath="$PROJECT_DIR$/pt.uma.ctesp.aula3/pt.uma.ctesp.aula3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pt.uma.ctesp.aula4/pt.uma.ctesp.aula4.iml" filepath="$PROJECT_DIR$/pt.uma.ctesp.aula4/pt.uma.ctesp.aula4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pt.uma.ctesp.aula5/pt.uma.ctesp.aula5.iml" filepath="$PROJECT_DIR$/pt.uma.ctesp.aula5/pt.uma.ctesp.aula5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pt.uma.ctesp.aula6/pt.uma.ctesp.aula6.iml" filepath="$PROJECT_DIR$/pt.uma.ctesp.aula6/pt.uma.ctesp.aula6.iml" />
+    </modules>
+  </component>
+</project>
