@@ -19,12 +19,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1StLZKjS7GDHignjjs9ldmOnBnP" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunDashboard">
@@ -60,7 +65,30 @@
       <updated>1572377999375</updated>
       <workItem from="1572378001940" duration="703000" />
       <workItem from="1572378758843" duration="5310000" />
+      <workItem from="1572798245087" duration="247000" />
     </task>
+    <task id="LOCAL-00001" summary="Fim da ficha.">
+      <created>1572798329310</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1572798329310</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fim da ficha.">
+      <created>1572798416028</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1572798416028</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fim da ficha.">
+      <created>1572798458179</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572798458179</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -78,5 +106,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Fim da ficha." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fim da ficha." />
   </component>
 </project>
