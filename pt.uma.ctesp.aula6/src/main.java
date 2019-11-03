@@ -5,5 +5,4 @@ public class main {
         Vehicle mota = new Motorcycle(2009, 11000, "Yamaha", "r1", "blue", 25);
         System.out.println(mota.toString());
     }
-
 }
