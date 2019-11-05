@@ -1,8 +1,10 @@
-import java.awt.*;
-
 public class Circle extends Shape {
     private double radius;
 
+    public Circle() {
+        super();
+        this.radius = 0;
+    }
     public Circle(final Point position, final double radius) {
         super(position);
         this.radius = radius;

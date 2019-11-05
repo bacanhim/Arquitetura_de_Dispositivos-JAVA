@@ -1,5 +1,3 @@
-import java.awt.*;
-
 public class Rectangle extends Shape {
     private double width;
     private double height;

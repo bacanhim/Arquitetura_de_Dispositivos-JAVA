@@ -1,21 +1,25 @@
 import java.util.ArrayList;
 
 public class Figure {
-    private ArrayList shapes;
+    private ArrayList<Shape> shapes;
 
     public Figure() {
-        this.shapes = new ArrayList();
+        this.shapes = new ArrayList<Shape>();
     }
 
-    public Figure(ArrayList shapes) {
+    public Figure(ArrayList<Shape> shapes) {
         this.shapes = shapes;
     }
 
-    public ArrayList getShapes() {
+    public ArrayList<Shape> getShapes() {
         return shapes;
     }
 
-    public void setShapes(ArrayList shapes) {
+    public void setShapes(ArrayList<Shape> shapes) {
         this.shapes = shapes;
+    }
+
+    public void addShape(Shape shape) {
+        this.shapes.add(shape);
     }
 }

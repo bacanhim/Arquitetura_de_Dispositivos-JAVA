@@ -1,5 +1,3 @@
-import java.awt.*;
-
 public class Triangle extends Shape {
     private double side;
 
