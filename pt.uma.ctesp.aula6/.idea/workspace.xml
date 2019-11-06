@@ -40,8 +40,8 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -92,6 +92,12 @@
       <workItem from="1572977702915" duration="996000" />
       <workItem from="1572978721591" duration="391000" />
       <workItem from="1572979204330" duration="706000" />
+      <workItem from="1573040879100" duration="51000" />
+      <workItem from="1573041018633" duration="69000" />
+      <workItem from="1573041283987" duration="33000" />
+      <workItem from="1573041630679" duration="132000" />
+      <workItem from="1573041817159" duration="201000" />
+      <workItem from="1573042053637" duration="76000" />
     </task>
     <task id="LOCAL-00001" summary="Fim da ficha.">
       <created>1572798329310</created>

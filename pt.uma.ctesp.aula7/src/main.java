@@ -1,4 +1,5 @@
-import java.util.Arrays;
+import Menu.Menu;
+import Rational.Rational;
 
 public class main {
     public static void main(String[] args) {
@@ -8,7 +9,7 @@ public class main {
             String name = option.name();
             System.out.println(name);
         }
-//        Menu.optionsIfs();
+        Menu.optionsIfs();
 
 
         Rational r1 = new Rational(2,4);

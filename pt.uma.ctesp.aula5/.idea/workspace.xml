@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="pt.uma.ctesp.aula5:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2fd3ac33-3fb6-45fd-9e45-8d6cd5151e32" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/Rectangle.java" afterDir="false" />
@@ -32,8 +37,11 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pt.uma.ctesp.aula6" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
@@ -70,6 +78,12 @@
       <workItem from="1571769358375" duration="6297000" />
       <workItem from="1572113980233" duration="4110000" />
       <workItem from="1572380225421" duration="105000" />
+      <workItem from="1573040618017" duration="260000" />
+      <workItem from="1573040931424" duration="86000" />
+      <workItem from="1573041089227" duration="193000" />
+      <workItem from="1573041318073" duration="311000" />
+      <workItem from="1573041763963" duration="52000" />
+      <workItem from="1573042144322" duration="50000" />
     </task>
     <servers />
   </component>

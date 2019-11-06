@@ -1,3 +1,5 @@
+package Rational;
+
 public class Rational implements Comparable<Rational>{
     private int numerator;
     private int denominator;
