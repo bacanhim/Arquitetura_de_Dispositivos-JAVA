@@ -1,5 +1,7 @@
 package Rational;
 
+import java.util.Objects;
+
 public class Rational implements Comparable<Rational>{
     private int numerator;
     private int denominator;
@@ -47,4 +49,8 @@ public class Rational implements Comparable<Rational>{
         return denominator == other.denominator && numerator == other.numerator;
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(numerator,denominator);
+    }
 }
