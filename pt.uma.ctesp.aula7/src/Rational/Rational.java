@@ -1,6 +1,6 @@
 package Rational;
 
-import java.util.Objects;
+import java.util.*;
 
 public class Rational implements Comparable<Rational>{
     private int numerator;
@@ -53,4 +53,8 @@ public class Rational implements Comparable<Rational>{
     public int hashCode() {
         return Objects.hash(numerator,denominator);
     }
+
+    List<Rational> racionais = new ArrayList<Rational>();
+
+    
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="819d6518-29c8-4d31-bc43-e0f7ec2f21cc" name="Default Changelist" comment="" />
+    <list default="true" id="927c92e4-d089-4932-ac12-5bdf7e7b3980" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,7 +11,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -19,16 +18,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1TDBLQDyed7Si3gxVxXZAQwQgnf" />
+  <component name="ProjectId" id="1TWeJfB2evBp2w3TphuBcqwxcYr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Turma A\Desktop\ArqDisp\Trabalho\src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -42,35 +42,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main" />
-      <module name="pt.uma.ctesp.aula7" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="819d6518-29c8-4d31-bc43-e0f7ec2f21cc" name="Default Changelist" comment="" />
-      <created>1572984728940</created>
+      <changelist id="927c92e4-d089-4932-ac12-5bdf7e7b3980" name="Default Changelist" comment="" />
+      <created>1573580208178</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1572984728940</updated>
-      <workItem from="1572984732780" duration="1588000" />
-      <workItem from="1572986351292" duration="357000" />
-      <workItem from="1572987609992" duration="1756000" />
-      <workItem from="1573035142625" duration="12000" />
-      <workItem from="1573035203329" duration="33000" />
-      <workItem from="1573038740020" duration="1874000" />
-      <workItem from="1573042019488" duration="33000" />
-      <workItem from="1573042130643" duration="13000" />
-      <workItem from="1573042408113" duration="230000" />
-      <workItem from="1573578412885" duration="1240000" />
+      <updated>1573580208178</updated>
+      <workItem from="1573580211483" duration="9099000" />
     </task>
     <servers />
   </component>
@@ -82,9 +64,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
