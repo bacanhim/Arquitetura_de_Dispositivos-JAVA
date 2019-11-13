@@ -42,6 +42,20 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Game" />
+      <module name="Trabalho" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Game" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -53,6 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1573580208178</updated>
       <workItem from="1573580211483" duration="9099000" />
+      <workItem from="1573637112460" duration="6278000" />
     </task>
     <servers />
   </component>
@@ -64,7 +79,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

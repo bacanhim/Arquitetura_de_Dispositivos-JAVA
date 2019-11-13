@@ -13,6 +13,8 @@ public class Army {
     }
 
     public Army(int catapultas, int cavalaria, int infantaria, int side) {
+        attackForce = new ArrayList<FightingForce>();
+        defenceForce = new ArrayList<FightingForce>();
         for (int i = 0; i < catapultas; i++) {
             Random random = new Random();
             if (random.nextDouble() * 100 < side) {
