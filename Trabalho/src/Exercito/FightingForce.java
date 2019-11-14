@@ -4,7 +4,7 @@ public abstract class FightingForce {
     private int ataque;
     private int defesa;
 
-    public FightingForce(int ataque, int defesa){
+    public FightingForce(int ataque, int defesa) {
         this.ataque = ataque;
         this.defesa = defesa;
     }

@@ -40,4 +40,12 @@ public class Army {
             }
         }
     }
+
+    public ArrayList<FightingForce> getDefenceForce() {
+        return defenceForce;
+    }
+
+    public ArrayList<FightingForce> getAttackForce() {
+        return attackForce;
+    }
 }
