@@ -5,6 +5,7 @@ import Menu.Menu;
 import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
@@ -12,26 +13,33 @@ public class Game {
     private Army player;
     private Army enemy;
 
-    public final static void clearConsole()
-    {
-        try
-        {
+    public final static void clearConsole() {
+        try {
             final String os = System.getProperty("os.name");
 
-            if (os.contains("Windows"))
-            {
+            if (os.contains("Windows")) {
                 Runtime.getRuntime().exec("cls");
-            }
-            else
-            {
+            } else {
                 Runtime.getRuntime().exec("clear");
             }
-        }
-        catch (final Exception e)
-        {
+        } catch (final Exception e) {
         }
     }
 
+    private void createArmyBot() {
+        Random random = new Random();
+        int cata = random.nextInt(100 + 1);
+        int cav = random.nextInt(100 + 1);
+        int inf = random.nextInt(100 + 1);
+        int perc = random.nextInt(100 + 1);
+        int total = cata + cav + inf;
+        if (total > 100) {
+            createArmyBot();
+        } else {
+            enemy = new Army(cata, cav, inf, perc);
+        }
+
+    }
 
     private void createArmies() {
         clearConsole();
@@ -52,10 +60,10 @@ public class Game {
         if (total > 100) {
             System.out.println("Volte a introduzir");
             createArmies();
+        } else {
+            player = new Army(cata, cav, inf, perc);
         }
-        //System.out.println("Foram introduzidas:\nCatapultas: "+cata+"\nCavalaria: "+cav+"\nIntantaria: "+inf+"\n\n");
-        player = new Army(cata, cav, inf, perc);
-        enemy = new Army(cata, cav, inf, perc);
+        createArmyBot();
     }
 
     public void inspectArmies() {
@@ -73,7 +81,11 @@ public class Game {
                 qtTotal++;
             }
         }
-        System.out.println("\nQuantidade de tropas de Ataque do Player: " + qtTotal + "\n\nCatapultas: " + qtCata + "\nCavalaria: " + qtCav + "\nInfantaria: " + qtInf);qtCav = 0;qtInf = 0;qtCata = 0;qtTotal = 0;
+        System.out.println("\nQuantidade de tropas de Ataque do Player: " + qtTotal + "\n\nCatapultas: " + qtCata + "\nCavalaria: " + qtCav + "\nInfantaria: " + qtInf);
+        qtCav = 0;
+        qtInf = 0;
+        qtCata = 0;
+        qtTotal = 0;
         for (int i = 0; i < player.getDefenceForce().size(); i++) {
             if (player.getDefenceForce().get(i).getDefesa() == 1) {
                 qtCata++;
@@ -87,7 +99,10 @@ public class Game {
             }
         }
         System.out.println("\nQuantidade de tropas de defesa do Player: " + qtTotal + "\n\nCatapultas: " + qtCata + "\nCavalaria: " + qtCav + "\nInfantaria: " + qtInf);
-        qtCav = 0;qtInf = 0;qtCata = 0;qtTotal = 0;
+        qtCav = 0;
+        qtInf = 0;
+        qtCata = 0;
+        qtTotal = 0;
         for (int i = 0; i < enemy.getAttackForce().size(); i++) {
             if (enemy.getAttackForce().get(i).getAtaque() == 1) {
                 qtCata++;
@@ -101,7 +116,10 @@ public class Game {
             }
         }
         System.out.println("\nQuantidade de tropas de ataque do inimigo: " + qtTotal + "\n\nCatapultas: " + qtCata + "\nCavalaria: " + qtCav + "\nInfantaria: " + qtInf);
-        qtCav = 0;qtInf = 0;qtCata = 0;qtTotal = 0;
+        qtCav = 0;
+        qtInf = 0;
+        qtCata = 0;
+        qtTotal = 0;
         for (int i = 0; i < enemy.getDefenceForce().size(); i++) {
             if (enemy.getDefenceForce().get(i).getDefesa() == 1) {
                 qtCata++;
@@ -121,13 +139,12 @@ public class Game {
 
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Game game = new Game();
         boolean a = true;
         while (a) {
             Menu.Command[] options = Menu.Command.values();
-            for (int i = 0; i < options.length; i++) {
-                Menu.Command option = options[i];
+            for (Menu.Command option : options) {
                 String name = option.name();
                 int number = option.ordinal();
                 System.out.println(number + ". " + name);
