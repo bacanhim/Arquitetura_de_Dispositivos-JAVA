@@ -48,4 +48,20 @@ public class Army {
     public ArrayList<FightingForce> getAttackForce() {
         return attackForce;
     }
+
+    public int attackForceRound() {
+        int ataque = 0;
+        for (int i = 0; i < getAttackForce().size(); i++) {
+            ataque += getAttackForce().get(i).getAtaque()*(Math.random()*100);
+        }
+        return ataque;
+    }
+
+    public int defenceForceRound() {
+        int defesa = 0;
+        for (int i = 0; i < getAttackForce().size(); i++) {
+            defesa += getAttackForce().get(i).getDefesa();
+        }
+        return defesa;
+    }
 }
