@@ -52,16 +52,35 @@ public class Army {
     public int attackForceRound() {
         int ataque = 0;
         for (int i = 0; i < getAttackForce().size(); i++) {
-            ataque += getAttackForce().get(i).getAtaque()*(Math.random()*100);
+            ataque += getAttackForce().get(i).getAtaque() * (Math.random());
         }
         return ataque;
     }
 
     public int defenceForceRound() {
         int defesa = 0;
-        for (int i = 0; i < getAttackForce().size(); i++) {
-            defesa += getAttackForce().get(i).getDefesa();
+        for (int i = 0; i < getDefenceForce().size(); i++) {
+            defesa += getDefenceForce().get(i).getDefesa();
         }
         return defesa;
     }
+
+    public void attack(Army helder) {
+        helder.removeDef(attackForceRound());
+    }
+
+    private void removeDef(int damage) {
+        for (int i = 0; i < getDefenceForce().size(); i++) {
+            if (getDefenceForce().get(i).getDefesa() < damage) {
+                damage -= getDefenceForce().get(i).getDefesa();
+                getDefenceForce().remove(i);
+                i--;
+            } else if (getDefenceForce().get(i).getDefesa() > damage && damage > 0) {
+                getDefenceForce().get(i).setDefesa(getDefenceForce().get(i).getDefesa() - damage);
+                i--;
+                damage = 0;
+            }
+        }
+    }
+
 }
