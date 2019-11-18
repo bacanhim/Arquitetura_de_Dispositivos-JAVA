@@ -1,15 +1,13 @@
 import Exercito.Army;
 import Menu.Menu;
+import Verification.Verification;
+import org.w3c.dom.ls.LSOutput;
 
-
-import javax.swing.plaf.synth.SynthOptionPaneUI;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
-
+    Scanner scanner = new Scanner(System.in);
     private Army player;
     private Army enemy;
 
@@ -43,18 +41,13 @@ public class Game {
     private void createArmies() {
         clearConsole();
         int catapult, cavalary, infatry, percentage, total;
-        Scanner input = new Scanner(System.in);
         System.out.println("\n\nNOTA: Número de tropas nao pode ser superior a 100");
-        System.out.println("Introduza a quantidade de catapultas: ");
-        catapult = input.nextInt();
+        catapult = Verification.isInt("Introduza a quantidade de catapultas: ");
         System.out.println("\nTropas restantes: " + (100 - catapult));
-        System.out.println("Introduza a quantidade de cavalaria: ");
-        cavalary = input.nextInt();
+        cavalary = Verification.isInt("Introduza a quantidade de cavalaria: ");
         System.out.println("\nTropas restantes: " + (100 - catapult - cavalary));
-        System.out.println("Introduza a quantidade de infantaria: ");
-        infatry = input.nextInt();
-        System.out.println("Introduza a percentagem de tropas para o ataque: ");
-        percentage = input.nextInt();
+        infatry = Verification.isInt("Introduza a quantidade de infantaria: ");
+        percentage = Verification.isInt("Introduza a percentagem de tropas para o ataque: ");
         total = catapult + cavalary + infatry;
         if (total > 100) {
             System.out.println("Volte a introduzir");
@@ -149,6 +142,8 @@ public class Game {
                 if (enemy.defenceForceRound() > 0) {
                     System.out.println("enemy attack");
                     enemy.attack(player);
+                    System.out.println("\n\nPress ENTER to go to next round");
+                    scanner.nextLine();
                 }
             } while (player.defenceForceRound() > 0 && enemy.defenceForceRound() > 0);
             if (enemy.defenceForceRound() <= 0) {
@@ -168,6 +163,8 @@ public class Game {
                 if (player.defenceForceRound() > 0) {
                     System.out.println("Player attack");
                     player.attack(enemy);
+                    System.out.println("\n\nPress ENTER to go to next round...");
+                    scanner.nextLine();
                 }
             } while (player.defenceForceRound() > 0 && enemy.defenceForceRound() > 0);
             if (player.defenceForceRound() <= 0) {
@@ -189,8 +186,12 @@ public class Game {
                 System.out.println(number + ". " + name);
             }
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Introduza um comando: ");
-            String line = scanner.nextLine();
+            String line;
+            do {
+                System.out.println("Introduza um comando: ");
+                line = scanner.nextLine();
+            }
+            while (Verification.isInEnum(line, Menu.Command.class));
             Menu.Command command = Menu.Command.valueOf(line);
             switch (command) {
                 case CreateArmy: {

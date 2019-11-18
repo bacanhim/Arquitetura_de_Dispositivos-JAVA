@@ -37,7 +37,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -100,6 +100,7 @@
       <workItem from="1573637112460" duration="6278000" />
       <workItem from="1573746295713" duration="7051000" />
       <workItem from="1574017740756" duration="7223000" />
+      <workItem from="1574099129420" duration="6652000" />
     </task>
     <servers />
   </component>

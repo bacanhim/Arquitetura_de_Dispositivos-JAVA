@@ -26,9 +26,9 @@ public class Army {
         for (int i = 0; i < cavalaria; i++) {
             Random random = new Random();
             if (random.nextDouble() * 100 < side) {
-                attackForce.add(new Cavalary());
+                attackForce.add(new Cavalry());
             } else {
-                defenceForce.add(new Cavalary());
+                defenceForce.add(new Cavalry());
             }
         }
         for (int i = 0; i < infantaria; i++) {
@@ -65,8 +65,8 @@ public class Army {
         return defesa;
     }
 
-    public void attack(Army helder) {
-        helder.removeDef(attackForceRound());
+    public void attack(Army victim) {
+        victim.removeDef(attackForceRound());
     }
 
     private void removeDef(int damage) {
