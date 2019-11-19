@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="pt.uma.ctesp.aula5:jar" />
+      <artifact name="ptdwadawd" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
