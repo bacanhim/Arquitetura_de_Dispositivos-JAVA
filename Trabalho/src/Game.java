@@ -64,87 +64,96 @@ public class Game {
     public void inspectArmies() {
         String line = Verification.isTrue("Deseja visualizar as tropas por ordem de ataque: (sim/nao)");
         if (line.equals("sim")) {
-            System.out.println("PLAYER - Exercito ordenado: ");
-            player.Order();
-            System.out.print("Ataque");
-            System.out.println(player.getAttackForce());
-            System.out.print("Defesa");
-            System.out.println(player.getDefenceForce());
-            System.out.println("COMPUTADOR - Exercito ordenado: ");
-            enemy.Order();
-            System.out.print("Ataque");
-            System.out.println(enemy.getAttackForce());
-            System.out.print("Defesa");
-            System.out.println(enemy.getDefenceForce());
+            if (player.getAttackForce().size() == 0 && player.getDefenceForce().size() == 0 && enemy.getAttackForce().size() == 0 && enemy.getDefenceForce().size() == 0) {
+                System.out.println("Deverá criar os armies primeiro.");
+            } else {
+                System.out.println("PLAYER - Exercito ordenado: ");
+                player.Order();
+                System.out.print("Ataque");
+                System.out.println(player.getAttackForce());
+                System.out.print("Defesa");
+                System.out.println(player.getDefenceForce());
+                System.out.println("COMPUTADOR - Exercito ordenado: ");
+                enemy.Order();
+                System.out.print("Ataque");
+                System.out.println(enemy.getAttackForce());
+                System.out.print("Defesa");
+                System.out.println(enemy.getDefenceForce());
+            }
+
         }
         if (line.equals("nao")) {
-            int qtCavalary = 0, qtInfantry = 0, qtCatapult = 0, qtTotal = 0;
-            for (int i = 0; i < player.getAttackForce().size(); i++) {
-                if (player.getAttackForce().get(i).getAtaque() == 100) {
-                    qtCatapult++;
-                    qtTotal++;
-                } else if (player.getAttackForce().get(i).getAtaque() == 50) {
-                    qtCavalary++;
-                    qtTotal++;
-                } else {
-                    qtInfantry++;
-                    qtTotal++;
+            if (player.getAttackForce().size() == 0 && player.getDefenceForce().size() == 0 && enemy.getAttackForce().size() == 0 && enemy.getDefenceForce().size() == 0) {
+                System.out.println("Deverá criar os armies primeiro.");
+            } else {
+                int qtCavalary = 0, qtInfantry = 0, qtCatapult = 0, qtTotal = 0;
+                for (int i = 0; i < player.getAttackForce().size(); i++) {
+                    if (player.getAttackForce().get(i).getAtaque() == 100) {
+                        qtCatapult++;
+                        qtTotal++;
+                    } else if (player.getAttackForce().get(i).getAtaque() == 50) {
+                        qtCavalary++;
+                        qtTotal++;
+                    } else {
+                        qtInfantry++;
+                        qtTotal++;
+                    }
                 }
-            }
-            System.out.println("\n|------------- PLAYER -------------|");
-            System.out.println("\nTROPAS NO ATAQUE: " + qtTotal + "\nCatapultas: " + qtCatapult + "\nCavalaria: " + qtCavalary + "\nInfantaria: " + qtInfantry);
-            qtCavalary = 0;
-            qtInfantry = 0;
-            qtCatapult = 0;
-            qtTotal = 0;
-            for (int i = 0; i < player.getDefenceForce().size(); i++) {
-                if (player.getDefenceForce().get(i).getAtaque() == 100) {
-                    qtCatapult++;
-                    qtTotal++;
-                } else if (player.getDefenceForce().get(i).getAtaque() == 50) {
-                    qtCavalary++;
-                    qtTotal++;
-                } else {
-                    qtInfantry++;
-                    qtTotal++;
+                System.out.println("\n|------------- PLAYER -------------|");
+                System.out.println("\nTROPAS NO ATAQUE: " + qtTotal + "\nCatapultas: " + qtCatapult + "\nCavalaria: " + qtCavalary + "\nInfantaria: " + qtInfantry);
+                qtCavalary = 0;
+                qtInfantry = 0;
+                qtCatapult = 0;
+                qtTotal = 0;
+                for (int i = 0; i < player.getDefenceForce().size(); i++) {
+                    if (player.getDefenceForce().get(i).getAtaque() == 100) {
+                        qtCatapult++;
+                        qtTotal++;
+                    } else if (player.getDefenceForce().get(i).getAtaque() == 50) {
+                        qtCavalary++;
+                        qtTotal++;
+                    } else {
+                        qtInfantry++;
+                        qtTotal++;
+                    }
                 }
-            }
-            System.out.println("\nTROPAS NA DEFESA: " + qtTotal + "\nCatapultas: " + qtCatapult + "\nCavalaria: " + qtCavalary + "\nInfantaria: " + qtInfantry);
-            System.out.println("\n|------------ COMPUTADOR ------------|");
-            qtCavalary = 0;
-            qtInfantry = 0;
-            qtCatapult = 0;
-            qtTotal = 0;
-            for (int i = 0; i < enemy.getAttackForce().size(); i++) {
-                if (enemy.getAttackForce().get(i).getAtaque() == 1) {
-                    qtCatapult++;
-                    qtTotal++;
-                } else if (enemy.getAttackForce().get(i).getAtaque() == 50) {
-                    qtCavalary++;
-                    qtTotal++;
-                } else {
-                    qtInfantry++;
-                    qtTotal++;
+                System.out.println("\nTROPAS NA DEFESA: " + qtTotal + "\nCatapultas: " + qtCatapult + "\nCavalaria: " + qtCavalary + "\nInfantaria: " + qtInfantry);
+                System.out.println("\n|------------ COMPUTADOR ------------|");
+                qtCavalary = 0;
+                qtInfantry = 0;
+                qtCatapult = 0;
+                qtTotal = 0;
+                for (int i = 0; i < enemy.getAttackForce().size(); i++) {
+                    if (enemy.getAttackForce().get(i).getAtaque() == 1) {
+                        qtCatapult++;
+                        qtTotal++;
+                    } else if (enemy.getAttackForce().get(i).getAtaque() == 50) {
+                        qtCavalary++;
+                        qtTotal++;
+                    } else {
+                        qtInfantry++;
+                        qtTotal++;
+                    }
                 }
-            }
-            System.out.println("\nTROPAS NO ATAQUE:  " + qtTotal + "\nCatapultas: " + qtCatapult + "\nCavalaria: " + qtCavalary + "\nInfantaria: " + qtInfantry);
-            qtCavalary = 0;
-            qtInfantry = 0;
-            qtCatapult = 0;
-            qtTotal = 0;
-            for (int i = 0; i < enemy.getDefenceForce().size(); i++) {
-                if (enemy.getDefenceForce().get(i).getAtaque() == 100) {
-                    qtCatapult++;
-                    qtTotal++;
-                } else if (enemy.getDefenceForce().get(i).getAtaque() == 50) {
-                    qtCavalary++;
-                    qtTotal++;
-                } else {
-                    qtInfantry++;
-                    qtTotal++;
+                System.out.println("\nTROPAS NO ATAQUE:  " + qtTotal + "\nCatapultas: " + qtCatapult + "\nCavalaria: " + qtCavalary + "\nInfantaria: " + qtInfantry);
+                qtCavalary = 0;
+                qtInfantry = 0;
+                qtCatapult = 0;
+                qtTotal = 0;
+                for (int i = 0; i < enemy.getDefenceForce().size(); i++) {
+                    if (enemy.getDefenceForce().get(i).getAtaque() == 100) {
+                        qtCatapult++;
+                        qtTotal++;
+                    } else if (enemy.getDefenceForce().get(i).getAtaque() == 50) {
+                        qtCavalary++;
+                        qtTotal++;
+                    } else {
+                        qtInfantry++;
+                        qtTotal++;
+                    }
                 }
+                System.out.println("\nTROPAS NA DEFESA: " + qtTotal + "\nCatapultas: " + qtCatapult + "\nCavalaria: " + qtCavalary + "\nInfantaria: " + qtInfantry);
             }
-            System.out.println("\nTROPAS NA DEFESA: " + qtTotal + "\nCatapultas: " + qtCatapult + "\nCavalaria: " + qtCavalary + "\nInfantaria: " + qtInfantry);
         }
 
     }
