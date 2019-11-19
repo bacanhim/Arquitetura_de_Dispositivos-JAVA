@@ -1,6 +1,8 @@
 package Exercito;
 
+import Comparadores.OrderByAttack;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class Army {
@@ -42,14 +44,17 @@ public class Army {
         }
     }
 
+    // arr defence force
     public ArrayList<FightingForce> getDefenceForce() {
         return defenceForce;
     }
 
+    // arr attack force
     public ArrayList<FightingForce> getAttackForce() {
         return attackForce;
     }
 
+    // attack power
     public int attackForceRound() {
         int ataque = 0;
         for (int i = 0; i < getAttackForce().size(); i++) {
@@ -58,6 +63,7 @@ public class Army {
         return ataque;
     }
 
+    // defence power
     public int defenceForceRound() {
         int defesa = 0;
         for (int i = 0; i < getDefenceForce().size(); i++) {
@@ -66,15 +72,18 @@ public class Army {
         return defesa;
     }
 
+    // attack
     public void attack(Army victim) {
         damage = attackForceRound();
         victim.removeDef(damage);
     }
 
+    // show dmg
     public int getDamage() {
         return damage;
     }
 
+    // remove defence
     private void removeDef(int damage) {
         for (int i = 0; i < getDefenceForce().size(); i++) {
             if (getDefenceForce().get(i).getDefesa() < damage) {
@@ -89,4 +98,8 @@ public class Army {
         }
     }
 
+    // order troops by attack
+    public void Order() {
+        Collections.sort(this.attackForce, new OrderByAttack());
+    }
 }

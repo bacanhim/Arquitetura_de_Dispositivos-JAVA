@@ -3,13 +3,14 @@ import Exercito.Catapult;
 import Menu.Menu;
 import Utils.Verification;
 
+import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
     Scanner scanner = new Scanner(System.in);
-    private Army player;
-    private Army enemy;
+    private Army player = new Army();
+    private Army enemy = new Army();
 
     public final static void clearConsole() {
         try {
@@ -24,6 +25,7 @@ public class Game {
         }
     }
 
+    // create random bot army
     private void createArmyBot() {
         Random random = new Random();
         int catapult = random.nextInt(100 + 1);
@@ -38,19 +40,20 @@ public class Game {
         }
     }
 
+    // create my army
     private void createArmies() {
         clearConsole();
         int catapult, cavalary, infatry, percentage, total;
-        System.out.println("\n\nNOTA: Número de tropas nao pode ser superior a 100");
-        catapult = Verification.isInt("Introduza a quantidade de catapultas: ");
+        System.out.println("\n\nNOTA: Exército não pode ultrupassar as 100 Unidades.");
+        catapult = Verification.isInt("Unidades de Catapultas: \n");
         System.out.println("\nTropas restantes: " + (100 - catapult));
-        cavalary = Verification.isInt("Introduza a quantidade de cavalaria: ");
+        cavalary = Verification.isInt("Unidades de Cavalaria: \n");
         System.out.println("\nTropas restantes: " + (100 - catapult - cavalary));
-        infatry = Verification.isInt("Introduza a quantidade de infantaria: ");
-        percentage = Verification.isInt("Introduza a percentagem de tropas para o ataque: ");
+        infatry = Verification.isInt("Unidades de Infantaria: \n");
+        percentage = Verification.isInt("Percentagem de unidades para o ataque: \n");
         total = catapult + cavalary + infatry;
         if (total > 100) {
-            System.out.println("Volte a introduzir");
+            System.out.println("ERRO: Exército com demasiadas unidades. Volte a criar!\n");
             createArmies();
         } else {
             player = new Army(catapult, cavalary, infatry, percentage);
@@ -58,75 +61,85 @@ public class Game {
         createArmyBot();
     }
 
+    // inspect armies
     public void inspectArmies() {
-        clearConsole();
-        int qtCavalary = 0, qtInfantry = 0, qtCatapult = 0, qtTotal = 0;
-        for (int i = 0; i < player.getAttackForce().size(); i++) {
-            if (player.getAttackForce().get(i).getAtaque() == 100) {
-                qtCatapult++;
-                qtTotal++;
-            } else if (player.getAttackForce().get(i).getAtaque() == 50) {
-                qtCavalary++;
-                qtTotal++;
-            } else {
-                qtInfantry++;
-                qtTotal++;
+        String line = Verification.isTrue("Deseja visualizar as tropas por ordem de ataque: (sim/nao)");
+        if (line.equals("sim")) {
+
+        } if(line.equals("nao")) {
+            clearConsole();
+            int qtCavalary = 0, qtInfantry = 0, qtCatapult = 0, qtTotal = 0;
+            for (int i = 0; i < player.getAttackForce().size(); i++) {
+                if (player.getAttackForce().get(i).getAtaque() == 100) {
+                    qtCatapult++;
+                    qtTotal++;
+                } else if (player.getAttackForce().get(i).getAtaque() == 50) {
+                    qtCavalary++;
+                    qtTotal++;
+                } else {
+                    qtInfantry++;
+                    qtTotal++;
+                }
             }
-        }
-        System.out.println("\nQuantidade de tropas de Ataque do Player: " + qtTotal + "\n\nCatapultas: " + qtCatapult + "\nCavalaria: " + qtCavalary + "\nInfantaria: " + qtInfantry);
-        qtCavalary = 0;
-        qtInfantry = 0;
-        qtCatapult = 0;
-        qtTotal = 0;
-        for (int i = 0; i < player.getDefenceForce().size(); i++) {
-            if (player.getDefenceForce().get(i).getAtaque() == 100) {
-                qtCatapult++;
-                qtTotal++;
-            } else if (player.getDefenceForce().get(i).getAtaque() == 50) {
-                qtCavalary++;
-                qtTotal++;
-            } else {
-                qtInfantry++;
-                qtTotal++;
+            System.out.println("\n|------------- PLAYER -------------|");
+            System.out.println("\nTROPAS NO ATAQUE: " + qtTotal + "\nCatapultas: " + qtCatapult + "\nCavalaria: " + qtCavalary + "\nInfantaria: " + qtInfantry);
+            qtCavalary = 0;
+            qtInfantry = 0;
+            qtCatapult = 0;
+            qtTotal = 0;
+            for (int i = 0; i < player.getDefenceForce().size(); i++) {
+                if (player.getDefenceForce().get(i).getAtaque() == 100) {
+                    qtCatapult++;
+                    qtTotal++;
+                } else if (player.getDefenceForce().get(i).getAtaque() == 50) {
+                    qtCavalary++;
+                    qtTotal++;
+                } else {
+                    qtInfantry++;
+                    qtTotal++;
+                }
             }
-        }
-        System.out.println("\nQuantidade de tropas de defesa do Player: " + qtTotal + "\n\nCatapultas: " + qtCatapult + "\nCavalaria: " + qtCavalary + "\nInfantaria: " + qtInfantry);
-        qtCavalary = 0;
-        qtInfantry = 0;
-        qtCatapult = 0;
-        qtTotal = 0;
-        for (int i = 0; i < enemy.getAttackForce().size(); i++) {
-            if (enemy.getAttackForce().get(i).getAtaque() == 1) {
-                qtCatapult++;
-                qtTotal++;
-            } else if (enemy.getAttackForce().get(i).getAtaque() == 50) {
-                qtCavalary++;
-                qtTotal++;
-            } else {
-                qtInfantry++;
-                qtTotal++;
+            System.out.println("\nTROPAS NA DEFESA: " + qtTotal + "\nCatapultas: " + qtCatapult + "\nCavalaria: " + qtCavalary + "\nInfantaria: " + qtInfantry);
+            System.out.println("\n|------------ COMPUTADOR ------------|");
+            qtCavalary = 0;
+            qtInfantry = 0;
+            qtCatapult = 0;
+            qtTotal = 0;
+            for (int i = 0; i < enemy.getAttackForce().size(); i++) {
+                if (enemy.getAttackForce().get(i).getAtaque() == 1) {
+                    qtCatapult++;
+                    qtTotal++;
+                } else if (enemy.getAttackForce().get(i).getAtaque() == 50) {
+                    qtCavalary++;
+                    qtTotal++;
+                } else {
+                    qtInfantry++;
+                    qtTotal++;
+                }
             }
-        }
-        System.out.println("\nQuantidade de tropas de ataque do inimigo: " + qtTotal + "\n\nCatapultas: " + qtCatapult + "\nCavalaria: " + qtCavalary + "\nInfantaria: " + qtInfantry);
-        qtCavalary = 0;
-        qtInfantry = 0;
-        qtCatapult = 0;
-        qtTotal = 0;
-        for (int i = 0; i < enemy.getDefenceForce().size(); i++) {
-            if (enemy.getDefenceForce().get(i).getAtaque() == 100) {
-                qtCatapult++;
-                qtTotal++;
-            } else if (enemy.getDefenceForce().get(i).getAtaque() == 50) {
-                qtCavalary++;
-                qtTotal++;
-            } else {
-                qtInfantry++;
-                qtTotal++;
+            System.out.println("\nTROPAS NO ATAQUE:  " + qtTotal + "\nCatapultas: " + qtCatapult + "\nCavalaria: " + qtCavalary + "\nInfantaria: " + qtInfantry);
+            qtCavalary = 0;
+            qtInfantry = 0;
+            qtCatapult = 0;
+            qtTotal = 0;
+            for (int i = 0; i < enemy.getDefenceForce().size(); i++) {
+                if (enemy.getDefenceForce().get(i).getAtaque() == 100) {
+                    qtCatapult++;
+                    qtTotal++;
+                } else if (enemy.getDefenceForce().get(i).getAtaque() == 50) {
+                    qtCavalary++;
+                    qtTotal++;
+                } else {
+                    qtInfantry++;
+                    qtTotal++;
+                }
             }
+            System.out.println("\nTROPAS NA DEFESA: " + qtTotal + "\nCatapultas: " + qtCatapult + "\nCavalaria: " + qtCavalary + "\nInfantaria: " + qtInfantry);
         }
-        System.out.println("\nQuantidade de tropas de defesa do inimigo: " + qtTotal + "\n\nCatapultas: " + qtCatapult + "\nCavalaria: " + qtCavalary + "\nInfantaria: " + qtInfantry);
+
     }
 
+    // start
     public void play() {
         Random random = new Random();
         boolean turn = random.nextBoolean();
@@ -134,81 +147,79 @@ public class Game {
         while (player.defenceForceRound() > 0 && enemy.defenceForceRound() > 0) {
             if (turn) {
                 rounds++;
-                System.out.println("----------------Round " + rounds + "-----------------------");
-                System.out.println("Defesa Atual player->" + player.defenceForceRound());
-                System.out.println("Defesa Atual computador->" + enemy.defenceForceRound());
-                System.out.println("Player attack");
+                System.out.println("-------- RONDA " + rounds + " - PLAYER ATACA COMPUTADOR ------");
+                System.out.println("Defesa do Player: " + player.defenceForceRound());
+                System.out.println("Defesa do Computador: " + enemy.defenceForceRound());
                 player.attack(enemy);
-                System.out.println("Total de impacto: " + player.getDamage());
+                System.out.println("Impacto do Ataque: " + player.getDamage());
                 turn = false;
                 if (enemy.defenceForceRound() <= 0) {
-                    System.out.println("\n\nVoce ganhou!!");
+                    System.out.println("\n[- PLAYER GANHOU A BATALHA -]");
                 } else if (player.defenceForceRound() <= 0) {
-                    System.out.println("\n\nO computador ganhou!!");
-                }
-                else {
-                    System.out.println("\nPress ENTER to go to next round");
+                    System.out.println("\n[- COMPUTADOR GANHOU A BATALHA -]");
+                } else {
+                    System.out.println("\nPressione ENTER para passar à próxima ronda.");
                     scanner.nextLine();
                 }
-
             } else {
                 rounds++;
-                System.out.println("----------------Round " + rounds + "-----------------------");
-                System.out.println("Defesa Atual player->" + player.defenceForceRound());
-                System.out.println("Defesa Atual computador->" + enemy.defenceForceRound());
-                System.out.println("Enemy attack");
+                System.out.println("-------- RONDA " + rounds + " - COMPUTADOR ATACA PLAYER ------");
+                System.out.println("Defesa do Player: " + player.defenceForceRound());
+                System.out.println("Defesa do Computador: " + enemy.defenceForceRound());
                 enemy.attack(player);
-                System.out.println("Total de impacto: " + enemy.getDamage());
+                System.out.println("Impacto do Ataque: " + enemy.getDamage());
                 turn = true;
                 if (player.defenceForceRound() <= 0) {
-                    System.out.println("\n\nO computador ganhou!!");
+                    System.out.println("\n[- COMPUTADOR GANHOU A BATALHA -]");
                 } else if (enemy.defenceForceRound() <= 0) {
-                    System.out.println("\n\nVoce ganhou!!");
-                }
-                else {
-                    System.out.println("\nPress ENTER to go to next round");
+                    System.out.println("\n[- PLAYER GANHOU A BATALHA -]");
+                } else {
+                    System.out.println("\nPressione ENTER para passar à próxima ronda.");
                     scanner.nextLine();
                 }
             }
         }
     }
 
+    //menu and call functions
     public static void main(String[] args) {
         Game game = new Game();
         boolean run = true;
         while (run) {
+            System.out.println("----- MENU -----");
             Menu.Command[] options = Menu.Command.values();
             for (Menu.Command option : options) {
                 String name = option.name();
                 int number = option.ordinal();
-                System.out.println(number + ". " + name);
+                System.out.println(number + " - " + name);
             }
             Scanner scanner = new Scanner(System.in);
             String line;
             do {
-                System.out.println("Introduza um comando: ");
+                System.out.println("\nINTRODUZA UM COMANDO: ");
                 line = scanner.nextLine();
             }
             while (Verification.isInEnum(line.toUpperCase(), Menu.Command.class));
+
             Menu.Command command = Menu.Command.valueOf(line.toUpperCase());
             switch (command) {
                 case CREATEARMY: {
                     clearConsole();
                     game.createArmies();
-                    System.out.println("\nPress ENTER to continue...");
+                    System.out.println("\nPressione ENTER para continuar...");
                     scanner.nextLine();
                     break;
                 }
                 case INSPECTARMY: {
                     clearConsole();
                     game.inspectArmies();
-                    System.out.println("\nPress ENTER to continue...");
+                    System.out.println("\nPressione ENTER para continuar...");
                     scanner.nextLine();
                     break;
                 }
                 case PLAY: {
                     game.play();
-                    System.out.println("\nPress ENTER to continue...");
+                    System.out.println("\nPressione ENTER para continuar...");
                     scanner.nextLine();
                     break;
                 }

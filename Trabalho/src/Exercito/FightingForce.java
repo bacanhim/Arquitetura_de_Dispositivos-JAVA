@@ -27,6 +27,6 @@ public abstract class FightingForce {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Valor de ataque: " + getAtaque() + "\n Valor de defesa: " + getDefesa() + "\n\n";
     }
 }
