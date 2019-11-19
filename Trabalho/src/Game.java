@@ -147,7 +147,6 @@ public class Game {
                     System.out.println("\n\nO computador ganhou!!");
                 }
                 else {
-                    System.out.println(Catapult.toString());
                     System.out.println("\nPress ENTER to go to next round");
                     scanner.nextLine();
                 }
