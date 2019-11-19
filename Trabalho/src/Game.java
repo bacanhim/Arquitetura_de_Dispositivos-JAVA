@@ -12,52 +12,51 @@ public class Game {
     private Army player = new Army();
     private Army enemy = new Army();
 
-    public final static void clearConsole() {
-        try {
-            final String os = System.getProperty("os.name");
-
-            if (os.contains("Windows")) {
-                Runtime.getRuntime().exec("cls");
-            } else {
-                Runtime.getRuntime().exec("clear");
-            }
-        } catch (final Exception e) {
-        }
-    }
-
     // create random bot army
     private void createArmyBot() {
         Random random = new Random();
-        int catapult = random.nextInt(100 + 1);
-        int cavalary = random.nextInt(100 + 1);
-        int infatry = random.nextInt(100 + 1);
+        final int max = 100;
+        int total = 0;
+        int catapult = random.nextInt(max);
+        total += catapult;
+        int cavalary = random.nextInt(max - total);
+        total += cavalary;
+        int infantry = random.nextInt(max - total);
+        total += infantry;
         int percentage = random.nextInt(100 + 1);
-        int total = catapult + cavalary + infatry;
-        if (total > 100) {
-            createArmyBot();
-        } else {
-            enemy = new Army(catapult, cavalary, infatry, percentage);
-        }
+        enemy = new Army(catapult, cavalary, infantry, percentage);
     }
 
     // create my army
     private void createArmies() {
-        clearConsole();
-        int catapult, cavalary, infatry, percentage, total;
+        int catapult, cavalary = 0, infantry = 0, percentage, total = 0;
         System.out.println("\n\nNOTA: Exército não pode ultrupassar as 100 Unidades.");
-        catapult = Verification.isInt("Unidades de Catapultas: \n");
-        System.out.println("\nTropas restantes: " + (100 - catapult));
-        cavalary = Verification.isInt("Unidades de Cavalaria: \n");
-        System.out.println("\nTropas restantes: " + (100 - catapult - cavalary));
-        infatry = Verification.isInt("Unidades de Infantaria: \n");
-        percentage = Verification.isInt("Percentagem de unidades para o ataque: \n");
-        total = catapult + cavalary + infatry;
-        if (total > 100) {
-            System.out.println("ERRO: Exército com demasiadas unidades. Volte a criar!\n");
-            createArmies();
-        } else {
-            player = new Army(catapult, cavalary, infatry, percentage);
+        do {
+            catapult = Verification.isInt("Unidades de Catapultas: \n");
         }
+        while (catapult < 0 || catapult > 100);
+        total += catapult;
+        if (total < 100) {
+            System.out.println("\nTropas restantes: " + (100 - total));
+            do {
+                cavalary = Verification.isInt("Unidades de Cavalaria: \n");
+            }
+            while (cavalary < 0 || cavalary > 100 - catapult);
+        }
+        total += cavalary;
+        if (total < 100) {
+            System.out.println("\nTropas restantes: " + (100 - total));
+            do {
+                infantry = Verification.isInt("Unidades de Infantaria: \n");
+            }
+            while (infantry < 0 || infantry > 100 - cavalary - catapult);
+        }
+        total += infantry;
+        do {
+            percentage = Verification.isInt("Percentagem de unidades para o ataque: \n");
+        }
+        while (percentage > 100 || percentage < 0);
+        player = new Army(catapult, cavalary, infantry, percentage);
         createArmyBot();
     }
 
@@ -65,9 +64,20 @@ public class Game {
     public void inspectArmies() {
         String line = Verification.isTrue("Deseja visualizar as tropas por ordem de ataque: (sim/nao)");
         if (line.equals("sim")) {
-
-        } if(line.equals("nao")) {
-            clearConsole();
+            System.out.println("PLAYER - Exercito ordenado: ");
+            player.Order();
+            System.out.print("Ataque");
+            System.out.println(player.getAttackForce());
+            System.out.print("Defesa");
+            System.out.println(player.getDefenceForce());
+            System.out.println("COMPUTADOR - Exercito ordenado: ");
+            enemy.Order();
+            System.out.print("Ataque");
+            System.out.println(enemy.getAttackForce());
+            System.out.print("Defesa");
+            System.out.println(enemy.getDefenceForce());
+        }
+        if (line.equals("nao")) {
             int qtCavalary = 0, qtInfantry = 0, qtCatapult = 0, qtTotal = 0;
             for (int i = 0; i < player.getAttackForce().size(); i++) {
                 if (player.getAttackForce().get(i).getAtaque() == 100) {
@@ -204,14 +214,12 @@ public class Game {
             Menu.Command command = Menu.Command.valueOf(line.toUpperCase());
             switch (command) {
                 case CREATEARMY: {
-                    clearConsole();
                     game.createArmies();
                     System.out.println("\nPressione ENTER para continuar...");
                     scanner.nextLine();
                     break;
                 }
                 case INSPECTARMY: {
-                    clearConsole();
                     game.inspectArmies();
                     System.out.println("\nPressione ENTER para continuar...");
                     scanner.nextLine();

@@ -6,6 +6,6 @@ public class Catapult extends FightingForce {
     }
     @Override
     public String toString() {
-        return "Catapulta: "+ super.toString();
+        return "\nCatapulta: "+ super.toString();
     }
 }
