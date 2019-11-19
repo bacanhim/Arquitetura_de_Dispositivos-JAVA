@@ -1,7 +1,7 @@
 import Exercito.Army;
+import Exercito.Catapult;
 import Menu.Menu;
-import Verification.Verification;
-import org.w3c.dom.ls.LSOutput;
+import Utils.Verification;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -131,46 +131,45 @@ public class Game {
         Random random = new Random();
         boolean turn = random.nextBoolean();
         int rounds = 0;
-        if (turn) {
-            do {
-                rounds++;
-                System.out.println("Round " + rounds + "-----------------");
-                System.out.println("Defesa Atual->" + player.defenceForceRound());
-                System.out.println("Player attack");
-
-                player.attack(enemy);
-                if (enemy.defenceForceRound() > 0) {
-                    System.out.println("enemy attack");
-                    enemy.attack(player);
-                    System.out.println("\n\nPress ENTER to go to next round");
-                    scanner.nextLine();
-                }
-            } while (player.defenceForceRound() > 0 && enemy.defenceForceRound() > 0);
-            if (enemy.defenceForceRound() <= 0) {
-                System.out.println("Voce ganhou!!");
-            } else if (player.defenceForceRound() <= 0) {
-                System.out.println("O computador ganhou!!");
-            }
-
-
-        } else {
-            do {
+        while (player.defenceForceRound() > 0 && enemy.defenceForceRound() > 0) {
+            if (turn) {
                 rounds++;
                 System.out.println("----------------Round " + rounds + "-----------------------");
-                System.out.println("Defesa Atual->" + player.defenceForceRound());
-                System.out.println("enemy attack");
-                enemy.attack(player);
-                if (player.defenceForceRound() > 0) {
-                    System.out.println("Player attack");
-                    player.attack(enemy);
-                    System.out.println("\n\nPress ENTER to go to next round...");
+                System.out.println("Defesa Atual player->" + player.defenceForceRound());
+                System.out.println("Defesa Atual computador->" + enemy.defenceForceRound());
+                System.out.println("Player attack");
+                player.attack(enemy);
+                System.out.println("Total de impacto: " + player.getDamage());
+                turn = false;
+                if (enemy.defenceForceRound() <= 0) {
+                    System.out.println("\n\nVoce ganhou!!");
+                } else if (player.defenceForceRound() <= 0) {
+                    System.out.println("\n\nO computador ganhou!!");
+                }
+                else {
+                    System.out.println(Catapult.toString());
+                    System.out.println("\nPress ENTER to go to next round");
                     scanner.nextLine();
                 }
-            } while (player.defenceForceRound() > 0 && enemy.defenceForceRound() > 0);
-            if (player.defenceForceRound() <= 0) {
-                System.out.println("O computador ganhou!!");
-            } else if (enemy.defenceForceRound() <= 0) {
-                System.out.println("Voce ganhou!!");
+
+            } else {
+                rounds++;
+                System.out.println("----------------Round " + rounds + "-----------------------");
+                System.out.println("Defesa Atual player->" + player.defenceForceRound());
+                System.out.println("Defesa Atual computador->" + enemy.defenceForceRound());
+                System.out.println("Enemy attack");
+                enemy.attack(player);
+                System.out.println("Total de impacto: " + enemy.getDamage());
+                turn = true;
+                if (player.defenceForceRound() <= 0) {
+                    System.out.println("\n\nO computador ganhou!!");
+                } else if (enemy.defenceForceRound() <= 0) {
+                    System.out.println("\n\nVoce ganhou!!");
+                }
+                else {
+                    System.out.println("\nPress ENTER to go to next round");
+                    scanner.nextLine();
+                }
             }
         }
     }
@@ -191,30 +190,30 @@ public class Game {
                 System.out.println("Introduza um comando: ");
                 line = scanner.nextLine();
             }
-            while (Verification.isInEnum(line, Menu.Command.class));
-            Menu.Command command = Menu.Command.valueOf(line);
+            while (Verification.isInEnum(line.toUpperCase(), Menu.Command.class));
+            Menu.Command command = Menu.Command.valueOf(line.toUpperCase());
             switch (command) {
-                case CreateArmy: {
+                case CREATEARMY: {
                     clearConsole();
                     game.createArmies();
-                    System.out.println("\n\nPress ENTER to continue...");
+                    System.out.println("\nPress ENTER to continue...");
                     scanner.nextLine();
                     break;
                 }
-                case InspectArmy: {
+                case INSPECTARMY: {
                     clearConsole();
                     game.inspectArmies();
-                    System.out.println("\n\nPress ENTER to continue...");
+                    System.out.println("\nPress ENTER to continue...");
                     scanner.nextLine();
                     break;
                 }
-                case Play: {
+                case PLAY: {
                     game.play();
-                    System.out.println("\n\nPress ENTER to continue...");
+                    System.out.println("\nPress ENTER to continue...");
                     scanner.nextLine();
                     break;
                 }
-                case Quit: {
+                case QUIT: {
                     run = false;
                     break;
                 }

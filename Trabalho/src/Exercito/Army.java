@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Army {
+    int damage;
     ArrayList<FightingForce> attackForce;
     ArrayList<FightingForce> defenceForce;
 
@@ -66,7 +67,12 @@ public class Army {
     }
 
     public void attack(Army victim) {
-        victim.removeDef(attackForceRound());
+        damage = attackForceRound();
+        victim.removeDef(damage);
+    }
+
+    public int getDamage() {
+        return damage;
     }
 
     private void removeDef(int damage) {

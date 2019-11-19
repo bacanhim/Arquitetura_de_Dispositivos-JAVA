@@ -25,4 +25,8 @@ public abstract class FightingForce {
         this.defesa = defesa;
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

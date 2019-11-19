@@ -1,4 +1,4 @@
-package Verification;
+package Utils;
 import java.util.Scanner;
 
 public class Verification {
@@ -18,7 +18,6 @@ public class Verification {
             if (e.name().equals(value)) {
                 return false;
             }
-
         }
         System.out.println("Introduza uma opção valida!!");
         return true;
