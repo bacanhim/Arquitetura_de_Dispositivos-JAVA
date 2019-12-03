@@ -1,28 +1,29 @@
+
+import java.util.Timer;
+import java.util.TimerTask;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package smarttermo;
-
-import java.util.TimerTask;
-import java.util.Timer;
 
 /**
  *
  * @author Turma A
  */
-public class SmartTermo extends javax.swing.JFrame {
-    
+public class dasda extends javax.swing.JFrame {
+
+    /**
+     * Creates new form dasda
+     */
     private double desiredtemp = 22;
     private int desiredhum = 70;
     private double currenttemp=22;
     private int currenthum=70;
     boolean celcius = true;
-    /**
-     * Creates new form SmartTermo
-     */
-    public SmartTermo() {
+
+    public dasda() {
         initComponents();
         currentTemp.setText(currenttemp+"");
         currentH.setText("80%");
@@ -38,6 +39,8 @@ public class SmartTermo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        console = new javax.swing.JScrollPane();
+        consoleText = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         currentTemperature = new javax.swing.JLabel();
@@ -58,10 +61,15 @@ public class SmartTermo extends javax.swing.JFrame {
         desiredH = new javax.swing.JLabel();
         plusHumidity = new javax.swing.JButton();
         lessHumidity = new javax.swing.JButton();
-        console = new javax.swing.JScrollPane();
-        consoleText = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        console.setEnabled(false);
+
+        consoleText.setColumns(20);
+        consoleText.setRows(5);
+        consoleText.setEnabled(false);
+        console.setViewportView(consoleText);
 
         jLabel1.setText("Current Temp: ");
 
@@ -211,13 +219,6 @@ public class SmartTermo extends javax.swing.JFrame {
                 .addGap(31, 31, 31))
         );
 
-        console.setEnabled(false);
-
-        consoleText.setColumns(20);
-        consoleText.setRows(5);
-        consoleText.setEnabled(false);
-        console.setViewportView(consoleText);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -236,7 +237,7 @@ public class SmartTermo extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(console, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))
+                .addComponent(console, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE))
         );
 
         pack();
@@ -252,13 +253,6 @@ public class SmartTermo extends javax.swing.JFrame {
         };
         timer.scheduleAtFixedRate(timerTask,0,1000);
     }
-    private void plusTemperatureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusTemperatureActionPerformed
-        currentTemp.setText(currenttemp+"");
-        desiredTemp.setText((desiredtemp+0.5)+"º");
-        desiredtemp+=0.5;
-        consoleText.setText(consoleText.getText()+"Fora adicionado +0.5º a temperatura desejada\n");
-    }//GEN-LAST:event_plusTemperatureActionPerformed
-
     private void lessTemperatureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessTemperatureActionPerformed
         currentTemp.setText(currenttemp+"");
         desiredTemp.setText((desiredtemp+0.5)+"º");
@@ -266,9 +260,12 @@ public class SmartTermo extends javax.swing.JFrame {
         consoleText.setText(consoleText.getText()+"Fora removido -0.5º da temperatura desejada\n");
     }//GEN-LAST:event_lessTemperatureActionPerformed
 
-    private void plusHumidityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusHumidityActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_plusHumidityActionPerformed
+    private void plusTemperatureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusTemperatureActionPerformed
+        currentTemp.setText(currenttemp+"");
+        desiredTemp.setText((desiredtemp+0.5)+"º");
+        desiredtemp+=0.5;
+        consoleText.setText(consoleText.getText()+"Fora adicionado +0.5º a temperatura desejada\n");
+    }//GEN-LAST:event_plusTemperatureActionPerformed
 
     private void convertTempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convertTempActionPerformed
         if(celcius == true){
@@ -288,10 +285,14 @@ public class SmartTermo extends javax.swing.JFrame {
             currentTgrau.setText("ºC");
             currentDgrau.setText("ºC");
             convertTemp.setText("Convert to Fahrenheit ");
-                        consoleText.setText(consoleText.getText()+"Temperatura convertida para Celcius\n");
+            consoleText.setText(consoleText.getText()+"Temperatura convertida para Celcius\n");
             celcius = true;
         }
     }//GEN-LAST:event_convertTempActionPerformed
+
+    private void plusHumidityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusHumidityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_plusHumidityActionPerformed
 
     /**
      * @param args the command line arguments
@@ -310,20 +311,20 @@ public class SmartTermo extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SmartTermo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(dasda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SmartTermo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(dasda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SmartTermo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(dasda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SmartTermo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(dasda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SmartTermo().setVisible(true);
+                new dasda().setVisible(true);
             }
         });
     }

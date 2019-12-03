@@ -1,0 +1,27 @@
+az extension add --name azure-cli-iot-ext
+
+
+az iot hub device-identity create --hub-name SmartTermoIOT --device-id MyJavaDevice
+
+az iot hub device-identity show-connection-string --hub-name SmartTermoIOT --device-id MyJavaDevice --output table
+
+
+ConnectionString
+---------------------------------------------------------------------------------------------------------------------------
+HostName=SmartTermoIOT.azure-devices.net;DeviceId=MyJavaDevice;SharedAccessKey=vNKQFKCHpEjw/Cjrz3x6HuP/UwvMjNlENP2F99hz+GU=
+---------------------------------------------------------------------------------------------------------------------------
+
+
+az iot hub show --query properties.eventHubEndpoints.events.endpoint --name SmartTermoIOT
+
+"sb://iothub-ns-smarttermo-2569691-955132eea9.servicebus.windows.net/"
+
+az iot hub show --query properties.eventHubEndpoints.events.path --name SmartTermoIOT
+
+"smarttermoiot"
+
+az iot hub policy show --name service --query primaryKey --hub-name SmartTermoIOT
+
+"iA3dhifC7/oEP/mqmGTbOQY0yGjh403YSTraAxOtqso="
+
+
