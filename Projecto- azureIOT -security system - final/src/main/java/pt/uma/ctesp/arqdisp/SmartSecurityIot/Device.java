@@ -16,6 +16,8 @@ import com.pi4j.io.gpio.PinState;
 import com.pi4j.io.gpio.RaspiPin;
 import java.io.*;
 import java.net.URISyntaxException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 import java.util.Timer;
@@ -42,7 +44,7 @@ public class Device extends javax.swing.JFrame {
     private static DeviceClient client;
     public static final GpioController gpio = GpioFactory.getInstance();
     public static final GpioPinDigitalOutput pin = gpio.provisionDigitalOutputPin(RaspiPin.GPIO_15, "MyLED", PinState.HIGH);
-
+    DateFormat dateFormat = new SimpleDateFormat("EEE, MMM d HH:mm:ss yyyy");
     int distance;
     /**
      * Creates new form Device
@@ -52,9 +54,9 @@ public class Device extends javax.swing.JFrame {
         @Override
         public void run() {
             TelemetryDataPoint telemetryDataPoint = new TelemetryDataPoint();
-            System.out.println(distance);
             telemetryDataPoint.distance = distance;
-            telemetryDataPoint.data = new Date();
+            Date data = new Date();
+            telemetryDataPoint.data = dateFormat.format(data);
             telemetryDataPoint.alarme = distance < DirectMethodCallback.getDistanceInterval();
             String msgStr = telemetryDataPoint.serialize();
             Message msg = new Message(msgStr);

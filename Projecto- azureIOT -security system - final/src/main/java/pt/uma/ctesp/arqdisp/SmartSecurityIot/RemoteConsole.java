@@ -177,7 +177,6 @@ public class RemoteConsole extends javax.swing.JFrame {
                     if (receivedEvents != null) {
                         for (EventData receivedEvent : receivedEvents) {
                             String alarme = "";
-                            String str = (new String(receivedEvent.getBytes(), Charset.defaultCharset()));
                             Object obj = (Object) (new String(receivedEvent.getBytes(), Charset.defaultCharset()));
                             JsonParser parser = new JsonParser();
                             JsonObject object = (JsonObject) parser.parse((String) obj);
@@ -186,7 +185,7 @@ public class RemoteConsole extends javax.swing.JFrame {
                             } else {
                                 alarme = "Falso";
                             }
-                            jTextAreaLog.append("\nDistância: " + object.get("distance") + "cm, Alerta: " + alarme + ", Data: " + object.get("data"));
+                            jTextAreaLog.append("\nDistância: " + object.get("distance") + "cm, Alerta: " + alarme + "," + object.get("data"));
                         }
                     }
                 } catch (EventHubException e) {

@@ -6,7 +6,6 @@
 package pt.uma.ctesp.arqdisp.SmartSecurityIot;
 
 import com.google.gson.Gson;
-import java.util.Date;
 
 /**
  *
@@ -15,7 +14,7 @@ import java.util.Date;
 public class TelemetryDataPoint {
 
     public double distance;
-    public Date data;
+    public String data;
     public boolean alarme;
 
     // Serialize object to JSON format.
