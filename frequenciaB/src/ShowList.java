@@ -7,6 +7,10 @@ public class ShowList {
         TVshowList = new ArrayList<TVShow>();
     }
 
+    public ArrayList<TVShow> getTVshowList() {
+        return TVshowList;
+    }
+
     public void ordenar() {
         TVshowList.sort(new Comparador());
     }
